@@ -15,8 +15,20 @@
 		<meta name="theme-color" content="#000000" />
 		<link rel="apple-touch-icon" href="assets/icons/icon-192.png" />
 		<link rel="icon" href="assets/icons/icon-192.png" />
+    <style>
+      #bg-canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1; /* Behind all other content */
+        display: block; /* Remove potential extra space */
+      }
+    </style>
 	</head>
 	<body>
+    <canvas id="bg-canvas"></canvas>
 		<header class="header">
 			<h1>PWA Notes</h1>
 		</header>
@@ -33,6 +45,15 @@
 		<footer>
 			<p>PWA Notes App &copy; 2025</p>
 		</footer>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.164.1/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.164.1/examples/jsm/"
+        }
+      }
+    </script>
 		<script src="src/app.js"></script>
+    <script type="module" src="src/space-bg.js"></script>
 	</body>
 </html>
