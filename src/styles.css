@@ -1,0 +1,180 @@
+/* Vercel-inspired Dark Theme */
+:root {
+	--background-primary: #000000;
+	--background-secondary: #111111;
+	--background-tertiary: #222222;
+	--text-primary: #ffffff;
+	--text-secondary: #888888;
+	--accent-primary: #ffffff; /* Vercel uses white or a light gray for primary actions */
+	--accent-secondary: #333333;
+	--border-color: #333333;
+	--font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		"Helvetica Neue", Arial, sans-serif;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: var(--font-sans);
+	background-color: var(--background-primary);
+	color: var(--text-primary);
+	line-height: 1.6;
+	padding-bottom: 60px; /* Space for footer */
+}
+
+.header {
+	background-color: var(--background-secondary);
+	padding: 1rem 1.5rem;
+	text-align: center;
+	border-bottom: 1px solid var(--border-color);
+}
+
+.header h1 {
+	font-size: 1.75rem;
+	font-weight: 700;
+}
+
+.container {
+	max-width: 800px;
+	margin: 2rem auto;
+	padding: 0 1.5rem;
+}
+
+.note-input-area {
+	background-color: var(--background-secondary);
+	padding: 1.5rem;
+	border-radius: 8px;
+	margin-bottom: 2rem;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.note-input-area input[type="text"],
+.note-input-area textarea {
+	width: 100%;
+	padding: 0.75rem 1rem;
+	margin-bottom: 1rem;
+	background-color: var(--background-tertiary);
+	color: var(--text-primary);
+	border: 1px solid var(--border-color);
+	border-radius: 6px;
+	font-size: 1rem;
+	font-family: var(--font-sans);
+}
+
+.note-input-area input[type="text"]::placeholder,
+.note-input-area textarea::placeholder {
+	color: var(--text-secondary);
+}
+
+.note-input-area textarea {
+	min-height: 120px;
+	resize: vertical;
+}
+
+.note-input-area button {
+	background-color: var(--accent-primary);
+	color: var(--background-primary); /* Black text on white button */
+	border: none;
+	padding: 0.75rem 1.5rem;
+	font-size: 1rem;
+	font-weight: 600;
+	border-radius: 6px;
+	cursor: pointer;
+	transition: background-color 0.2s ease, transform 0.1s ease;
+	display: block;
+	width: 100%;
+}
+
+.note-input-area button:hover {
+	background-color: #f0f0f0; /* Slightly darker white */
+}
+
+.note-input-area button:active {
+	transform: scale(0.98);
+}
+
+.notes-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+	gap: 1.5rem;
+}
+
+.note-card {
+	background-color: var(--background-secondary);
+	padding: 1.5rem;
+	border-radius: 8px;
+	border: 1px solid var(--border-color);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.note-card h3 {
+	font-size: 1.25rem;
+	font-weight: 600;
+	margin-bottom: 0.75rem;
+	word-break: break-word;
+}
+
+.note-card p {
+	font-size: 1rem;
+	color: var(--text-secondary);
+	margin-bottom: 1rem;
+	white-space: pre-wrap; /* Preserve line breaks */
+	word-break: break-word;
+	flex-grow: 1;
+}
+
+.note-card .delete-btn {
+	background-color: var(--accent-secondary);
+	color: var(--text-primary);
+	border: 1px solid var(--border-color);
+	padding: 0.5rem 1rem;
+	font-size: 0.9rem;
+	border-radius: 6px;
+	cursor: pointer;
+	transition: background-color 0.2s ease;
+	align-self: flex-end;
+}
+
+.note-card .delete-btn:hover {
+	background-color: #444444; /* Darker gray */
+}
+
+footer {
+	background-color: var(--background-secondary);
+	color: var(--text-secondary);
+	text-align: center;
+	padding: 1rem;
+	border-top: 1px solid var(--border-color);
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	font-size: 0.9rem;
+}
+
+/* Offline page specific styles */
+.offline-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: calc(100vh - 120px); /* Adjust based on header/footer height */
+	text-align: center;
+}
+
+.offline-container h2 {
+	font-size: 2rem;
+	margin-bottom: 1rem;
+}
+
+.offline-container p {
+	font-size: 1.1rem;
+	color: var(--text-secondary);
+}

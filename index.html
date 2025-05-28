@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>PWA Notes</title>
+		<link rel="manifest" href="manifest.json" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="src/styles.css" />
+		<meta name="theme-color" content="#000000" />
+		<link rel="apple-touch-icon" href="assets/icons/icon-192.png" />
+		<link rel="icon" href="assets/icons/icon-192.png" />
+	</head>
+	<body>
+		<header class="header">
+			<h1>PWA Notes</h1>
+		</header>
+		<main class="container">
+			<div class="note-input-area">
+				<input id="note-title" type="text" placeholder="Note Title" />
+				<textarea id="note-content" placeholder="Take a note..."></textarea>
+				<button id="add-note-btn">Add Note</button>
+			</div>
+			<div id="notes-grid" class="notes-grid">
+				<!-- Notes will be dynamically inserted here -->
+			</div>
+		</main>
+		<footer>
+			<p>PWA Notes App &copy; 2025</p>
+		</footer>
+		<script src="src/app.js"></script>
+	</body>
+</html>
